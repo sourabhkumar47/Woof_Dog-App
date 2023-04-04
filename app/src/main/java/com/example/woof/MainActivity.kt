@@ -25,10 +25,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -72,14 +76,18 @@ fun WoofApp() {
  */
 @Composable
 fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-            .background(MaterialTheme.colors.surface)
+    Card(
+        modifier = modifier.padding(8.dp)
     ) {
-        DogIcon(dog.imageResourceId)
-        DogInformation(dog.name, dog.age)
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+                .background(MaterialTheme.colors.surface)
+        ) {
+            DogIcon(dog.imageResourceId)
+            DogInformation(dog.name, dog.age)
+        }
     }
 }
 
@@ -94,7 +102,9 @@ fun DogIcon(@DrawableRes dogIcon: Int, modifier: Modifier = Modifier) {
     Image(
         modifier = modifier
             .size(64.dp)
-            .padding(8.dp),
+            .padding(8.dp)
+            .clip(RoundedCornerShape(50)),
+        contentScale = ContentScale.Crop,
         painter = painterResource(dogIcon),
         /*
          * Content Description is not needed here - image is decorative, and setting a null content
@@ -137,12 +147,12 @@ fun WoofPreview() {
     }
 }
 
-@Preview
-@Composable
-fun DarkThemePreview(){
-    WoofTheme(darkTheme = true) {
-        WoofApp()
-    }
-}
+//@Preview
+//@Composable
+//fun DarkThemePreview() {
+//    WoofTheme(darkTheme = true) {
+//        WoofApp()
+//    }
+//}
 
 
