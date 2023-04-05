@@ -128,10 +128,12 @@ fun DogInformation(@StringRes dogName: Int, dogAge: Int, modifier: Modifier = Mo
         Text(
             text = stringResource(dogName),
             color = MaterialTheme.colors.onSurface,
+            style = MaterialTheme.typography.h2,
             modifier = modifier.padding(top = 8.dp)
         )
         Text(
             text = stringResource(R.string.years_old, dogAge),
+            style = MaterialTheme.typography.body1,
             color = MaterialTheme.colors.onSurface
         )
     }
