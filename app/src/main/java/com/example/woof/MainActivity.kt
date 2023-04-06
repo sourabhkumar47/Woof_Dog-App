@@ -32,6 +32,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
@@ -148,9 +149,23 @@ fun DogInformation(@StringRes dogName: Int, dogAge: Int, modifier: Modifier = Mo
 //Top app bar composable
 @Composable
 fun WoofTopAppBar(modifier: Modifier = Modifier) {
-    Row() {
-        Image(painter = painterResource(R.drawable.ic_woof_logo), contentDescription = null)
-        Text(text = stringResource(id = R.string.app_name))
+    Row(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(color = MaterialTheme.colors.primary),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Image(
+            modifier = modifier
+                .padding(8.dp)
+                .size(64.dp),
+            painter = painterResource(R.drawable.ic_woof_logo),
+            contentDescription = null
+        )
+        Text(
+            text = stringResource(R.string.app_name),
+            style = MaterialTheme.typography.h1
+        )
     }
 }
 
