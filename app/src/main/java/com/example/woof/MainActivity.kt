@@ -117,7 +117,28 @@ fun DogItemButton(
             contentDescription = stringResource(R.string.expand_button_content_description)
         )
     }
+}
 
+//The text shown after expanding button
+@Composable
+fun DogHobby(@StringRes dogHobby: Int, modifier: Modifier = Modifier) {
+    Column(
+        modifier = Modifier.padding(
+            start = 16.dp,
+            top = 8.dp,
+            bottom = 16.dp,
+            end = 16.dp
+        )
+    ) {
+        Text(
+            text = stringResource(id = R.string.about),
+            style = MaterialTheme.typography.h3
+        )
+        Text(
+            text = stringResource(dogHobby),
+            style = MaterialTheme.typography.body1
+        )
+    }
 }
 
 /**
