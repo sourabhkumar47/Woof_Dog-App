@@ -90,18 +90,20 @@ fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
         modifier = modifier.padding(8.dp),
         elevation = 4.dp
     ) {
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(8.dp)
-                .background(MaterialTheme.colors.surface)
-        ) {
-            DogIcon(dog.imageResourceId)
-            DogInformation(dog.name, dog.age)
-            Spacer(Modifier.weight(1f))
-            DogItemButton(expanded = expanded, onClick = { })
+        Column() {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+//                .background(MaterialTheme.colors.surface)
+            ) {
+                DogIcon(dog.imageResourceId)
+                DogInformation(dog.name, dog.age)
+                Spacer(Modifier.weight(1f))
+                DogItemButton(expanded = expanded, onClick = { expanded = !expanded })
+            }
+            DogHobby(dogHobby = dog.hobbies)
         }
-        DogHobby(dogHobby = dog.hobbies)
     }
 }
 
@@ -124,7 +126,7 @@ fun DogItemButton(
 @Composable
 fun DogHobby(@StringRes dogHobby: Int, modifier: Modifier = Modifier) {
     Column(
-        modifier = Modifier.padding(
+        modifier = modifier.padding(
             start = 16.dp,
             top = 8.dp,
             bottom = 16.dp,
@@ -132,7 +134,7 @@ fun DogHobby(@StringRes dogHobby: Int, modifier: Modifier = Modifier) {
         )
     ) {
         Text(
-            text = stringResource(id = R.string.about),
+            text = stringResource(R.string.about),
             style = MaterialTheme.typography.h3
         )
         Text(
