@@ -101,6 +101,7 @@ fun DogItem(dog: Dog, modifier: Modifier = Modifier) {
             Spacer(Modifier.weight(1f))
             DogItemButton(expanded = expanded, onClick = { })
         }
+        DogHobby(dogHobby = dog.hobbies)
     }
 }
 
