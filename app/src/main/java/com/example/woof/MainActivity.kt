@@ -46,8 +46,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.woof.data.Dog
 import com.example.woof.data.dogs
-import com.example.woof.ui.theme.Green100
-import com.example.woof.ui.theme.Green50
 import com.example.woof.ui.theme.Grey50
 import com.example.woof.ui.theme.WoofTheme
 
