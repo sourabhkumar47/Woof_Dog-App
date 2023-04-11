@@ -9,7 +9,6 @@ Screenshots
 ==================================
 <div style="display:flex;">
 <img alt="App image" src="ScreenShot/Screenshot_20230410_220535.png" width="30%">
-<br>
 <img alt="App image" src="ScreenShot/Screen_Recording_20230411_005856_Woof_AdobeExpress.gif" width="30%">
 </div>
 
